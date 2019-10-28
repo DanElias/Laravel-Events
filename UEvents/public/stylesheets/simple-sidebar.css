@@ -25,15 +25,15 @@ body {
 }
 
 .sidebar-heading{
-    background: url(../images/backgroundPanel.jpg) !important;
-    object-fit: scale-down;
-    color: white;
-    height: 10%;
+  background-image: url(../images/loginBackground.png);
+
+  background-size: cover;
+  color: white;
 }
 
 #sidebar-wrapper .list-group {
   width: 15rem;
-    
+
 }
 
 #page-content-wrapper {

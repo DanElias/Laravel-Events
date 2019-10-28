@@ -33,13 +33,6 @@
         <button class="noBorder btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button><br/><br/>
         <p class="mt-5 mb-3 text-white">© UEvents 2019</p>
 
-        <!--
-        <ul>
-            @foreach($options as $option)
-              <li> {{ $option }} </li>
-            @endforeach
-        </ul> -->
-
       </div>
     </form>
   </div>

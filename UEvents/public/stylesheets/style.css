@@ -40,7 +40,8 @@ body {
 .login{
     background-image: url(../images/loginBackground.png);
     height: 100%;
-    object-fit: scale-down;
+    object-fit: cover;
+    background-size: cover;
     margin: 0 auto;
     padding: 0;
 }
@@ -48,6 +49,10 @@ body {
 .loginTitle{
     font-family: Futura;
     font-size: 1.5em;
+}
+
+.sidebar-heading{
+  background-color: #a153e7 !important;
 }
 
 .container-flex {
@@ -62,13 +67,13 @@ body {
 .contentAdmin{
     background-color: white;
     font-family: Avenir;
-    color: #212121;
+    color: #21212;
 }
 
 .adminBody{
     background-color: white;
     font-family: Avenir;
-    color: #212121;
+    color: #21212;
 }
 
 .containerPadding{
@@ -80,16 +85,16 @@ body {
 }
 
 .sectionHeader{
-    font-family: Avenir;
+    font-family: Montserrat;
     font-weight:1000;
-    color: rebeccapurple;
+    color:  #a153e7;
     font-size: 2.4em;
     padding-bottom: 0.7em;
 }
 
 .body{
     font-family: Avenir !important;
-    color: #878787 !important;
+    color: #87878 !important;
 }
 
 .sidebarShadow {
@@ -99,7 +104,7 @@ body {
 }
 
 .sidebarBackground{
-    background-image: url(../images/loginBackground.png);
+    background-color: #a153e7 !important;
 }
 
 noDisplay{
@@ -136,7 +141,7 @@ noDisplay{
 }
 
 .formModalHeader{
-    background-color: orange;
+    background-color: #a153e7;
     color: white;
     font-family: Futura;
     font-weight: 800;
@@ -160,6 +165,3 @@ noDisplay{
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
-
-
-
