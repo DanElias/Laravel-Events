@@ -249,8 +249,8 @@
             <th scope="col">Nombre<img src="/images/sort.png"/> </th>
             <th scope="col">Siglas<img src="/images/sort.png"/></th>
             <th scope="col" style="display:none;">Descripción</th>
-            <th scope="col">Fecha<img src="/images/sort.png"/></th>
-            <th scope="col">Hora<img src="/images/sort.png"/></th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
             <th scope="col" style="display:none;">Duración</th>
             <th scope="col" style="display:none;">Límite de asistentes</th>
             <th scope="col" style="display:none;">Costo</th>
