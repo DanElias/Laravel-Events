@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AuthController extends Controller
+class StartController extends Controller
 {
-  public function loginPage(){
+  public function index(){
     $context = [
-      'title' => 'UEvents | Login',
+      'title' => 'UEvents | Inicio',
       'info' => 'Data',
       'error' => false,
       'success' => false,
       'errorMessage'  => '',
       'successMessage'  => '',
     ];
-      return view('login', $context);
-    }
-    //
+
+    return view('start', $context);
+  }
 }

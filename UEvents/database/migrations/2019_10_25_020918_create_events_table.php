@@ -15,7 +15,7 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('idEvento');
-            $table->integer('idAdmin')->unsigned();
+            //$table->integer('idAdmin')->unsigned();
             $table->string('nombre');
             $table->string('siglas');
             $table->text('descripcion');
@@ -26,7 +26,7 @@ class CreateEventsTable extends Migration
             $table->string('lugar');
             $table->timestamps();
 
-            $table->foreign('idAdmin')->references('id')->on('users');
+            //$table->foreign('idAdmin')->references('id')->on('users');
         });
     }
 

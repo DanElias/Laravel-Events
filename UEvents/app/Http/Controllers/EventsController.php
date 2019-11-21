@@ -37,7 +37,7 @@ class EventsController extends Controller
     public function store(){
       $event = new Event();
       $event->nombre = request('nameEvent');
-      $event->idAdmin = 1 ; //TO-DO -> GET CURRENT USER ID
+      //$event->idAdmin = 1 ; //TO-DO -> GET CURRENT USER ID
       $event->siglas = request('siglasEvent');
       $event->fecha = request('dateEvent');
       $event->duracion = request('durationEvent');
@@ -73,7 +73,7 @@ class EventsController extends Controller
       $id = request('eventIdE');
       $event = Event::find($id);
       $event->nombre = request('nameEventE');
-      $event->idAdmin = 1 ; //TO-DO -> GET CURRENT USER ID
+      //$event->idAdmin = 1 ; //TO-DO -> GET CURRENT USER ID
       $event->siglas = request('siglasEventE');
       $event->fecha = request('dateEventE');
       $event->duracion = request('durationEventE');

@@ -41,12 +41,18 @@ date_default_timezone_set('America/Mexico_City');
 */
 
 //Authentication requests
+
+//Auth login
 Route::get('/', 'AuthController@loginPage');
 Route::get('/login', 'AuthController@loginPage');
-
-//Events Request
-Route::get('/events', 'EventsController@index');
-Route::post('/events', 'EventsController@store');
-Route::get('/events/{event}', 'EventsController@show');
-Route::post('/events/edit', 'EventsController@update');
+//Start Page
+Route::get('/start', 'StartController@index')->middleware('staff');
+//Events Requests
+Route::get('/events', 'EventsController@index')->middleware('staff');
+Route::post('/events', 'EventsController@store')->middleware('staff');
+Route::get('/events/{event}', 'EventsController@show')->middleware('staff');
+Route::post('/events/edit', 'EventsController@update')->middleware('staff');
 //Route::delete('/events/{event}', 'EventsController@destroy');
+//Users Requests
+Route::get('/users', 'UsersController@index')->middleware('staff');
+Auth::routes();

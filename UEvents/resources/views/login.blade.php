@@ -23,12 +23,13 @@
 
 <div class="text-center row align-self-center">
   <div class="col-12">
-    <form class="form-signin" method="POST" action="/iniciarSesion">
+    <form class="form-signin" method="POST" action="{{ route('login') }}">
+        @csrf
       <div id="error"><br/><br/><img src="../images/logoBlancoV2.png" alt="Logo" width="300px"/><br/><br/>
         <h1 class="h3 mb-3 font-weight-normal loginTitle text-white">INICIA SESIÓN</h1>
-        <label class="sr-only" for="inputEmail">Correo electrónico</label>
+        <label class="sr-only" for="email">Correo electrónico</label>
         <input class="form-control" type="email" name="email" id="email" placeholder="Correo electrónico" required="required" autofocus="autofocus"/>
-        <label class="sr-only" for="inputPassword">Contraseña</label>
+        <label class="sr-only" for="password">Contraseña</label>
         <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" required="required"/>
         <button class="noBorder btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button><br/><br/>
         <p class="mt-5 mb-3 text-white">© UEvents 2019</p>

@@ -33,18 +33,23 @@
 
     <div class="d-flex bg-white" id="wrapper">
       <div class="border-right bg-light" id="sidebar-wrapper">
-        <div class="sidebar-heading"> email@gmail.com </div>
+        <div class="sidebar-heading">   {{ Auth::user()->email }} </div>
         <div class="list-group list-group-flush">
 
-          <a class="list-group-item list-group-item-action bg-light" href="/eventos">
+
+          @if (Auth::check() && (Auth::user()->role == 'admin' || Auth::user()->role == 'staff'))
+          <a class="list-group-item list-group-item-action bg-light" href="/events">
             <i class="material-icons align-bottom">today</i>
             Eventos
           </a>
+          @endif
 
-          <a class="list-group-item list-group-item-action bg-light" href="#">
+          @if (Auth::check() && Auth::user()->role == 'admin')
+          <a class="list-group-item list-group-item-action bg-light" href="/users">
             <i class="material-icons align-bottom">account_circle</i>
             Usuarios
           </a>
+          @endif
 
         </div>
       </div>
@@ -65,9 +70,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" id="logoutButton" href="/iniciarSesion">
-                Cerrar sesión
-              </a>
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Cerrar Sesión') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                  </form>
             </li>
           </ul>
         </div>
