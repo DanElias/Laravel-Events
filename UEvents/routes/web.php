@@ -44,7 +44,7 @@ date_default_timezone_set('America/Mexico_City');
 
 //Auth login
 Route::get('/', 'AuthController@loginPage');
-Route::get('/login', 'AuthController@loginPage');
+Route::get('/iniciasesion', 'AuthController@loginPage');
 //Start Page
 Route::get('/start', 'StartController@index')->middleware('staff');
 //Events Requests
@@ -56,3 +56,7 @@ Route::post('/events/edit', 'EventsController@update')->middleware('staff');
 //Users Requests
 Route::get('/users', 'UsersController@index')->middleware('staff');
 Auth::routes();
+
+Route::get('/users', 'UsersController@index')->middleware('staff');
+
+Route::get('/home', 'HomeController@index');

@@ -16,14 +16,16 @@ class Staff
      */
     public function handle($request, Closure $next)
     {
-      if (Auth::check() && (Auth::user()->role == 'staff' || Auth::user()->role == 'admin' ) ) {
+      //Auth::logout();
+
+      if (Auth::check() && (Auth::user()->role == "staff" || Auth::user()->role == "admin" ) ) {
           return $next($request);
       }
-      elseif (Auth::check() && Auth::user()->role == 'user') {
-          return redirect('/');
+      elseif (Auth::check() && Auth::user()->role == "user") {
+          return redirect('/iniciasesion');
       }
       else {
-          return redirect('/');
+          return redirect('/iniciasesion');
       }
     }
 }

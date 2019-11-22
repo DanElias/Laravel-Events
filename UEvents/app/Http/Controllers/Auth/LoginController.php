@@ -28,18 +28,18 @@ class LoginController extends Controller
      */
     //protected $redirectTo = redirectTo( );
     protected function redirectTo( ) {
-      if (Auth::check() && Auth::user()->role == 'user') {
+      if (Auth::check() && Auth::user()->role == "user") {
           Auth::logout();
-          return('/');
+          return('/iniciasesion');
       }
-      elseif (Auth::check() && Auth::user()->role == 'staff') {
+      elseif (Auth::check() && Auth::user()->role == "staff") {
           return('/start');
       }
-      elseif (Auth::check() && Auth::user()->role == 'admin') {
+      elseif (Auth::check() && Auth::user()->role == "admin") {
           return('/start');
       }
       else {
-          return('/');
+          return('/iniciasesion');
       }
     }
 
