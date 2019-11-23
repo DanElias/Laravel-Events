@@ -73,8 +73,8 @@
 
               <div class="row">
                 <div class="col-sm">
-                  <label class="col-form-label" for="nameEvent">Nombre</label>
-                  <input class="form-control" type="text" name="nameEvent" id="nameEvent" required="required" placeholder="Conferencia" autofocus="autofocus"/>
+                  <label class="col-form-label" for="username">Nombre</label>
+                  <input class="form-control" type="text" name="nameEv" id="nameEvent" required="required" placeholder="Conferencia" autofocus="autofocus"/>
                 </div>
               </div>
 

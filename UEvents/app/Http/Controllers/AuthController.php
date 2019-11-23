@@ -17,5 +17,5 @@ class AuthController extends Controller
     ];
       return view('login', $context);
     }
-    
+
 }
