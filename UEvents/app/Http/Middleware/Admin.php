@@ -14,16 +14,18 @@ class Admin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
-      if (Auth::check() && Auth::user()->role == "admin") {
-        return $next($request);
-      }
-      elseif (Auth::check() && Auth::user()->role == "user") {
-          return redirect('/');
-      }
-      else {
-          return redirect('/user');
-      }
-    }
+     public function handle($request, Closure $next)
+     {
+       //Auth::logout();
+
+       if (Auth::user()->role == "admin"  ) {
+           return $next($request);
+       }
+       elseif (Auth::check() && Auth::user()->role == "staff") {
+           return redirect('/start');
+       }
+       else {
+           return redirect('/start');
+       }
+     }
 }

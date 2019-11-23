@@ -52,11 +52,9 @@ Route::get('/events', 'EventsController@index')->middleware('staff');
 Route::post('/events', 'EventsController@store')->middleware('staff');
 Route::get('/events/{event}', 'EventsController@show')->middleware('staff');
 Route::post('/events/edit', 'EventsController@update')->middleware('staff');
-//Route::delete('/events/{event}', 'EventsController@destroy');
 //Users Requests
-Route::get('/users', 'UsersController@index')->middleware('staff');
+Route::get('/users', 'UsersController@index')->middleware('admin');
+Route::post('/users', 'UsersController@store')->middleware('admin');
 Auth::routes();
-
-Route::get('/users', 'UsersController@index')->middleware('staff');
 
 Route::get('/home', 'HomeController@index');

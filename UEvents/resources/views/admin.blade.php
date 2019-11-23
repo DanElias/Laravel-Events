@@ -96,6 +96,11 @@
               </div>
               <div class="modal-body">
                 <p id="errorMessage"> {{ $errorMessage }}</p>
+                @if($errors->any())
+                        @foreach($errors->all() as $error)
+                            <li> {{ $error }} </li>
+                        @endforeach
+                @endif
               </div>
               <div class="modal-footer">
                 <!--button.btn.btn-primary(type='button') Ok-->

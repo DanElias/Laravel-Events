@@ -4,6 +4,12 @@
 @section('content')
 <!--Modals-->
 
+<!--  Error handle -->
+    @if($errors->any())
+            @foreach($errors->all() as $error)
+            @endforeach
+    @endif
+
   <!--INFO MOdal-->
   <div class="modal fade" tabindex="-1" role="dialog" id="eventsModal">
     <div class="modal-dialog modal-lg" role="document">
@@ -68,62 +74,67 @@
 
           {{ csrf_field() }}
 
-          <div class="form-group">
-            <div class="container">
+          <div class="form-group row">
+              <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
-              <div class="row">
-                <div class="col-sm">
-                  <label class="col-form-label" for="username">Nombre</label>
-                  <input class="form-control" type="text" name="nameEv" id="nameEvent" required="required" placeholder="Conferencia" autofocus="autofocus"/>
-                </div>
+              <div class="col-md-6">
+                  <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+
+                  @error('username')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
               </div>
+          </div>
 
-              <div class="row">
+          <div class="form-group row">
+              <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo electrónico') }}</label>
 
-                <div class="col-sm">
-                  <label class="col-form-label" for="siglasEvent">Siglas</label>
-                  <input class="form-control" type="text" name="siglasEvent" id="siglasEvent" required="required" placeholder="MSC" autofocus="autofocus"/>
-                </div>
+              <div class="col-md-6">
+                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                <div class="col-sm">
-                  <label class="col-form-label" for="dateEvent">Fecha</label>
-                  <input class="form-control" type="datetime-local" name="dateEvent" id="dateEvent" required="required" autofocus="autofocus"/>
-                </div>
+                  @error('email')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
               </div>
+          </div>
 
-              <div class="row">
-                <div class="col-sm">
-                  <label class="col-form-label" for="durationEvent">Duración(hrs)</label>
-                  <input class="form-control" type="text" name="durationEvent" id="durationEvent" required="required" placeholder="2" autofocus="autofocus"/>
-                </div>
+          <div class="form-group row">
+              <label for="role" class="col-md-4 col-form-label text-md-right">Rol</label>
 
-                <div class="col-sm">
-                  <label class="col-form-label" for="asistantsEvent">Límite asistentes</label>
-                  <input class="form-control" type="text" name="asistantsEvent" id="asistantsEvent" required="required" placeholder="100" autofocus="autofocus"/>
-                </div>
-
-                <div class="col-sm">
-                  <label class="col-form-label" for="costEvent">Costo(MXN)</label>
-                  <input class="form-control" type="text" name="costEvent" id="costEvent" required="required" placeholder="250" autofocus="autofocus"/>
-                </div>
+              <div class="col-md-6">
+                  <select name="role" class="form-control" >
+                      <option value="user">User</option>
+                      <option value="staff">Staff</option>
+                      <option value="admin">Admin</option>
+                  </select>
               </div>
+          </div>
 
-              <div class="row">
-                <div class="col-sm">
-                  <label class="col-form-label" for="locationEvent">Lugar</label>
-                  <input class="form-control" type="text" name="locationEvent" id="locationEvent" required="required" placeholder="ITESM Qro." autofocus="autofocus"/>
-                </div>
+          <div class="form-group row">
+              <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+
+              <div class="col-md-6">
+                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                  @error('password')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
               </div>
+          </div>
 
-              <div class="row">
-                <div class="col-sm">
-                  <label class="col-form-label" for="descriptionEvent">Decripción</label>
-                  <input class="form-control" type="text" name="descriptionEvent" id="descriptionEvent" required="required" placeholder="Conferencia sobre Inteligencia Artificial" autofocus="autofocus"/>
-                </div>
+          <div class="form-group row">
+              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
+
+              <div class="col-md-6">
+                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
               </div>
-
-            </div>
-          </div><br/>
+          </div>
           <button class="btn btn-primary btn-block noBorder" type="submit">Guardar</button>
         </form>
       </div>
