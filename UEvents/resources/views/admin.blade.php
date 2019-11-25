@@ -46,8 +46,15 @@
 
           @if (Auth::check() && Auth::user()->role == 'admin')
           <a class="list-group-item list-group-item-action bg-light" href="/users">
-            <i class="material-icons align-bottom">account_circle</i>
+            <i class="material-icons align-bottom">supervisor_account</i>
             Usuarios
+          </a>
+          @endif
+
+          @if (Auth::check() && (Auth::user()->role == 'admin' || Auth::user()->role == 'staff'))
+          <a class="list-group-item list-group-item-action bg-light" href="/profile">
+            <i class="material-icons align-bottom">account_circle</i>
+            Perfil
           </a>
           @endif
 
@@ -153,7 +160,7 @@
           $(document).ready(function() {
               $('#my_pagination_table').DataTable( {
                   language: {
-                      searchPlaceholder: "eventos"
+                      searchPlaceholder: '"evento"'
                   },
                   dom: 'Bfrtip',
                   buttons: [

@@ -132,13 +132,26 @@ noDisplay{
 .btn-primary {
     color: #fff;
     background-color: #a153e7;
-    border-color: #357ebd; /*set the color you want here*/
+    border-color: #a153e7; /*set the color you want here*/
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #fff;
     background-color: #7e27cc;
     border-color: #7e27cc; /*set the color you want here*/
 }
+
+.btn-primary2 {
+    color: #fff;
+    background-color: #be8deb;
+    border-color: #be8deb; /*set the color you want here*/
+}
+
+.btn-primary2:hover, .btn-primary2:focus, .btn-primary2:active, .btn-primary2.active, .open>.dropdown-toggle.btn-primary2 {
+    color: #fff;
+    background-color: #7e27cc;
+    border-color: #7e27cc; /*set the color you want here*/
+}
+
 
 .formModalHeader{
     background-color: #a153e7;

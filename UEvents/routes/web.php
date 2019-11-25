@@ -55,6 +55,9 @@ Route::post('/events/edit', 'EventsController@update')->middleware('staff');
 //Users Requests
 Route::get('/users', 'UsersController@index')->middleware('admin');
 Route::post('/users', 'UsersController@store')->middleware('admin');
+//Profile requests
+Route::get('/profile', 'ProfileController@index')->middleware('staff');
+Route::post('/profile/edit', 'ProfileController@update')->middleware('staff');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

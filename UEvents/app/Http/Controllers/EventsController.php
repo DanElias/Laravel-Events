@@ -28,6 +28,11 @@ class EventsController extends Controller
       return view('events', $context);
     }
 
+    public function getAll(){
+        $events = Event::all();
+        return $events;
+    }
+
     public function create(){}
 
     public function show($id){

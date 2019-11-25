@@ -252,9 +252,6 @@
             <th scope="col">Nombre de Usuario<img src="/images/sort.png"/> </th>
             <th scope="col">Email<img src="/images/sort.png"/></th>
             <th scope="col">Rol<img src="/images/sort.png"/></th>
-            <th scope="col">Información</th>
-            <th scope="col">Editar</th>
-            <th scope="col">Eliminar</th>
           </tr>
         </thead>
 
@@ -265,21 +262,6 @@
                 <td>{{ $object->username }}</td>
                 <td>{{ $object->email }}</td>
                 <td>{{ $object->role }}</td>
-                <td>
-                  <a class="btn btn-medium modal-trigger" href="javascript:void(0);" onclick="showUser('{{ $object->id }}')">
-                      <i class="material-icons colorBlue">more_horiz</i>
-                  </a>
-                </td>
-                <td>
-                  <a class="btn btn-medium modal-trigger" href="javascript:void(0);" onclick="editUser('{{ $object->id }}')">
-                      <i class="material-icons colorOrange">edit</i>
-                  </a>
-                </td>
-                <td>
-                  <a class="btn btn-medium modal-trigger" href="javascript:void(0);" onclick="deleteUser('{{ $object->id }}')">
-                      <i class="material-icons colorRed">delete</i>
-                  </a>
-                </td>
               </tr>
               @endforeach
         </tbody>
